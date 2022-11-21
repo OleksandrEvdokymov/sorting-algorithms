@@ -2,8 +2,11 @@ package edu.khai.algorithms.sorting;
 
 import edu.khai.algorithms.sorting.util.ArrayGenerator;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -80,6 +83,16 @@ class SortingAlgorithmTest {
         sortingAlgorithm.sort(array);
         for(int i = 0; i < n-1 ; i++){
             assertTrue(array[i] <= array[i+1]);
+        }
+    }
+
+    @Test
+    void testHeapSort(){
+        int[] quantity = new int[]{1000, 2330, 5900, 8315, 12120, 39600, 70700};
+        String[] ms =
+                Arrays.stream(quantity).mapToObj(String::valueOf).toArray(String[]::new);
+        for(String t: ms){
+            System.out.println(t);
         }
     }
 }
